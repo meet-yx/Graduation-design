@@ -11,8 +11,11 @@
  家庭住址（address）
  联系方式（tel）
  备注（remark）
-
  */
+var selfArr="1111111";
+
+
+
 var per1 = {
    id:"1", perName:"张大叔", sex:"男",
     card:"513522187905031211", address:"江西赣州", tel:"13530039897", remark:" "

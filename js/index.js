@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Created by Administrator on 2017/9/29 0029.
  */
 
@@ -108,3 +108,8 @@ $(".userBlock").click(function(){
         $(".userDetail").fadeIn();
     }
 });
+$(".to_information").click(function () {
+    console.log("in")
+    $(".userDetail").fadeOut();
+    // window.location.href="information.html";
+})

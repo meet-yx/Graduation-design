@@ -80,7 +80,6 @@ $("#queryBtn").click(function(){
 function search(){
     $.each(window.top.perArr,function(j,obj){
         if(window.top.perArr[j].perName.indexOf(queryTxtArr[0])>=0||queryTxtArr[0]==""){
-            console.log("11")
             if(queryTxtArr[1]==window.top.perArr[j].sex||queryTxtArr[1]==""){
                 $(id[a]).html(window.top.perArr[j].id);
                 $(perName[a]).html(window.top.perArr[j].perName);

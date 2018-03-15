@@ -15,12 +15,11 @@
 // };studentAdd
 var newObj=new Object();
     var newTr = $(".dataTr").clone(true);
-
-    for(var j = 1 ; j < window.top.userArr.length  ; j++){
+    for(var j = 1 ; j < window.top.userArr.length ; j++){
         var other = newTr.clone();
         $("table").append(other);
-    var id = $(".no");
 }
+    var id = $(".no");
     var password=$(".password") ;
     var userName=$(".userName") ;
     var operation=$(".operation") ;
@@ -29,11 +28,9 @@ var newObj=new Object();
     /*=======================显示数据====================*/
 function initTable(){
     $(".table td").html("");
-    console.log(window.top.userArr)
     $.each(window.top.userArr,function(i,obj){
-
-        $(id[i]).html(window.top.userArr[i].id);
         $(password[i]).html(window.top.userArr[i].password);
+        $(id[i]).html(window.top.userArr[i].id);
         $(userName[i]).html(window.top.userArr[i].userName);
         if ($(id[i]) != "") {
             $(operation[i]).html(
@@ -45,38 +42,40 @@ function initTable(){
 }
 /*========================删除====================*/
 $(".operation").on("click",".deleteData",function(){
-    let sid=$(this).attr("sid")
-    console.log(sid)
+    let sid=$(this).attr("sid");
     for (let i=0;i<window.top.userArr.length;i++){
         if(window.top.userArr[i].id==sid){
             window.top.userArr.splice(i,1)
         }
     }
-    initTable()
-})
+    initTable();
+    console.log(window.top.userArr,"deleted");
+});
+
+
+
 /*========================点击修改弹出框====================*/
-var this_id
+var this_id;
 $(".dataTable").on("click",".btnsubmit",function(){
-    let sid=$(this).attr("sid")
-    console.log(sid)
+    let sid=$(this).attr("sid");
     for (let i=0;i<window.top.userArr.length;i++){
         if(window.top.userArr[i].id==sid){
-            this_id=i
-            $(".user_name").val(window.top.userArr[i].userName)
+            this_id=i;
+            $(".user_name").val(window.top.userArr[i].userName);
             $(".user_pwd").val(window.top.userArr[i].password)
         }
     }
 
     // window.top.userArr.splice($(this).attr("sid"),1)
     initTable()
-})
+});
 /*========================点击确认修改====================*/
 $("#btnInsert").click(function () {
-    window.top.userArr[this_id].userName=$(".user_name").val()
-    window.top.userArr[this_id].password=$(".user_pwd").val()
-    initTable()
+    window.top.userArr[this_id].userName=$(".user_name").val();
+    window.top.userArr[this_id].password=$(".user_pwd").val();
+    initTable();
     window.location.href="user.html";
-})
+});
 
 
 //=========================== 添加用户===========================
