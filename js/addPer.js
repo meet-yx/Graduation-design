@@ -26,7 +26,6 @@ $("#cancel").click(function(){
 });
 function getInfo(){
 //    根据id获取表单信息
-    console.log("add")
     let perName=$("#perName").val();
     let sex=$("#sex").val();
     let card=$("#card").val();
@@ -44,7 +43,8 @@ function getInfo(){
         else {
             id=1
         }
-        window.top.perArr.push({id:id, perName:perName, sex:sex, card:card, address:address, tel:tel, remark:remarkLab1});
+        window.top.perArr.push({id:id, perName:perName, sex:sex,
+            card:card, address:address, tel:tel, remark:remarkLab1});
         judge=true;
     }
     return judge;
